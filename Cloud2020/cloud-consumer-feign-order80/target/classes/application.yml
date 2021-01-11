@@ -1,0 +1,31 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-order-feign-service
+
+eureka:
+  client:
+    register-with-eureka: false
+#    fetch-registry: true
+    service-url:
+      #单机版
+      #defaultZone: http://localhost:7001/eureka
+      #集群版
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+
+ribbon:
+  #建立连接的时间
+  ReadTimeout: 5000
+  #获取资源的时间
+  ConnectTimeOut: 5000
+
+  #配置负载均衡策略
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #配置规则 随机
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule #配置规则 轮询
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RetryRule #配置规则 重试
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule #配置规则 响应时间权重
+    #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.BestAvailableRule #配置规则 最空闲连接策略
+
+  NFLoadBalancerRuleClassName: com.kangyq.springcloud.com.kangyq.myrule.MyIRule

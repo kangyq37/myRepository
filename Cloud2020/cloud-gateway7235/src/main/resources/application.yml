@@ -1,0 +1,35 @@
+server:
+  port: 7235
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从eureka注册中心动态创建爱你路由功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh  #路由Id 必须唯一
+#          uri: http://localhost:8001
+          uri: lb://CLOUD-PROVIDER-PAYMENT
+          predicates:  #断言 断言为true时才匹配至相应的路由
+            - Path=/payment/getPaymentById/**
+#            - Cookie=uaername,kangyq
+          #  - Between=2017-01-20T17:42:47.485-08:00[Asia/Shanghai] ,2017-01-20T17:42:47.485-08:00[Asia/Shanghai]
+          #  - After=2017-01-20T17:42:47.485-08:00[Asia/Shanghai] #在该日期时间之后发生的请求都将被匹配
+          #  - Before=2017-01-20T17:42:47.485-08:00[Asia/Shanghai] #在该日期时间之后发生的请求都将被匹配
+        - id: payment_routh1
+#          uri: http://localhost:8001
+          uri: lb://CLOUD-PROVIDER-PAYMENT
+          predicates:
+            - Path=/payment/create/**
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
