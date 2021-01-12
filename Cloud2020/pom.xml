@@ -9,11 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-<!--    子模块-->
+<!--子模块-->
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
-        <module>untitled</module>
         <module>cloud-commons-api</module>
         <module>cloud-eureka-server</module>
         <module>cloud-eureka-servcer7002</module>
