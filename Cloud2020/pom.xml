@@ -13,7 +13,6 @@
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
-        <module>untitled</module>
         <module>cloud-commons-api</module>
         <module>cloud-eureka-server</module>
         <module>cloud-eureka-servcer7002</module>
@@ -28,7 +27,7 @@
     <!--  <properties>-->
     <!--    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
     <!--  </properties>-->
-    <!--  统一管理jar包版本-->
+    <!--  统一管理jar包版本1111-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
