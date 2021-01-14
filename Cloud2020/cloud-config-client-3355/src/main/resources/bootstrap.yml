@@ -1,0 +1,35 @@
+#bootstrap 系统级
+#application 应用级
+# bootstrap 优先级高于 application
+
+server:
+  port: 3355
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    #config 客户端配置
+    config:
+      label: master #分支名
+      name: config #配置文件名称
+      profile: dev #环境名称
+      uri: http://localhost:3344
+  rabbitmq:
+    host: 106.52.104.118
+    port: 5672
+    username: guest
+    password: guest
+
+#注册至注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include:  "*"
