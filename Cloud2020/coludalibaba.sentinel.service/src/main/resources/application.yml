@@ -1,0 +1,20 @@
+server:
+  port: 8408
+spring:
+  application:
+    name: cloud-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 106.52.104.118:1111
+    sentinel:
+      transport:
+        dashboard: localhost:8718
+        port: 8719
+        clientIp: localhost
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

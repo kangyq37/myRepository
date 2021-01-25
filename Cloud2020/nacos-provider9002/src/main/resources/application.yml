@@ -1,0 +1,18 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: nacos-provider
+  cloud:
+    nacos: # nacos 参数配置
+      discovery:
+        server-addr: 106.52.104.118:1111 # 地址配置
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

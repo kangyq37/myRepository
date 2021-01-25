@@ -1,0 +1,22 @@
+server:
+  port: 83
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 106.52.104.118:1111
+
+#在调用服务时的地址通过配置文件读取到
+service-url:
+  nacos-user-service: http://nacos-provider
+
+
+
+#暴露端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
